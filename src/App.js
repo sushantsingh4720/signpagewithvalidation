@@ -16,6 +16,7 @@ function App() {
       onSubmit: (values, action) => {
         console.log(values);
         action.resetForm();
+        //here you can performs any necessary actions, such as sending the data to an API or displaying a success message.
         alert.show("Successfully submitted");
       },
     });

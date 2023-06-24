@@ -103,3 +103,8 @@ body {
   color: rgb(74, 59, 59);
   text-decoration: none;
 }
+@media only screen and (max-width: 900px) {
+  .form-container {
+    width: 90%;
+  }
+}
