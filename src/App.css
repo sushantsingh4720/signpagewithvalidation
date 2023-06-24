@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+body {
+  padding: 0;
+  margin: 0;
+
+  font-family: cursive, "Nunito", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.sign-up {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../public/backgroundImage.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  /* Add the blur effect */
+  filter: blur(8px); /* Standard property for applying blur */
+  -webkit-filter: blur(8px); /* Fallback for WebKit-based browsers */
+}
+.form-container {
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 30%;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-block {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0px 10px 0px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  /* padding: 0px 0px 10px 0px; */
+}
+.form-error {
+  font-size: 1.2rem;
+  color: rgb(220, 43, 43);
+  margin: 0;
+  font-weight: 100;
+}
+.input-block input {
+  outline: 0;
+  border: 0;
+  padding: 10px 0px 10px 5px;
+  font-size: 14px;
+  background-color: rgba(214, 218, 219, 0.833);
+  margin-bottom: 5px;
+}
+.input-block input::-moz-placeholder {
+  color: black;
+  opacity: 1;
+}
+.input-block input:-ms-input-placeholder {
+  color: black;
+  opacity: 1;
+}
+.input-block input::placeholder {
+  color: black;
+  opacity: 1;
+}
+.input-block:focus-within {
+  border-color: black;
+}
+.input-block:focus-within .input-label {
+  color: rgb(74, 59, 59);
+}
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.input-button {
+  padding: 1.2rem 3.2rem;
+  outline: none;
+  text-transform: uppercase;
+  border: 0;
+  color: #fff;
+  border-radius: 4px;
+  background: #8c7569;
+  transition: 0.3s;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-button:hover {
+  background-color: rgba(173, 179, 181, 0.833);
+}
+.log-in {
+  margin: 20px 0 0;
+  font-size: 14px;
+  text-align: center;
+}
+.log-in a {
+  color: rgb(74, 59, 59);
+  text-decoration: none;
 }
