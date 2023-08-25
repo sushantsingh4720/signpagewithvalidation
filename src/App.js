@@ -1,14 +1,15 @@
 import "./App.css";
 import { useFormik } from "formik";
 import signupSchemaValidation from "./Validation/signupSchemaValidation";
-import { useAlert } from "react-alert";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 const initialValues = {
   name: "",
   email: "",
   password: "",
 };
 function App() {
-  const alert = useAlert();
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
     useFormik({
       initialValues,
@@ -17,7 +18,16 @@ function App() {
         console.log(values);
         action.resetForm();
         //here you can performs any necessary actions, such as sending the data to an API or displaying a success message.
-        alert.show("Successfully submitted");
+        toast.success("Successfully submitted", {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       },
     });
   return (
@@ -91,6 +101,18 @@ function App() {
           <a href="http://localhost:3000">Log In now</a>
         </p>
       </div>
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
